@@ -83,7 +83,3 @@ if (isset($_GET['poisk'])) {
 if (isset($_GET['change_data_client']))	{
     $client = (new Client)->changeDataClient();
 }
-
-if (isset($_GET['/reg.php']))	{
-    echo "XXXXXXXXXXXXXXXXXXXXX";
-}
