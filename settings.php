@@ -8,9 +8,10 @@
 
 
 <?php
-require_once "config.php";
-require_once "User.class.php";
-shortUserInfo();
+require_once "mainController.php";
+$user = new User();
+$user->shortUserInfo();
+if ($user->checkAdmin() == true) {
 ?>
 
 
@@ -18,12 +19,14 @@ shortUserInfo();
 <div align="center">
 <h3>Меню </h3>
 <form class="menu">
+    <input class="menu" type="button" value="На главную" onclick= "document.location='index.php'"><br>
     <input class="menu" type="button" value="Обновить favicon" onclick="document.location='favicon.php'"><br>
     <input class="menu" type="button" onclick="document.location='add_admin.php'" value="Добавить администратора"><br>
+    
 
 </form> 
-</div><br><br>
+</div><br><br><br><br><br>
 <!--/Menu-->
-
 <?php
+} else {header('Location: 404.php');}
 require_once "footer.php";

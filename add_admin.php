@@ -1,11 +1,8 @@
 <?php
-
-require_once "config.php";
-require_once "User.class.php";
-require_once "Client.class.php";
-shortUserInfo();
-
-if (checkAdmin()) {
+require_once "mainController.php";
+$user = new User();
+$user->shortUserInfo();
+if ($user->checkAdmin() == true) {
 ?>
 <html>
 <head>
@@ -16,7 +13,7 @@ if (checkAdmin()) {
 </head>
 
 <div align="center">
-	<form  action="add_admin.php"  method="POST">
+	<form method="POST">
             <input required class="button" minlength="4" type="text" size="30" name="reg_login" placeholder="Логин не менее 4 символов"><br><br>
             <input required class="button" minlength="6" type="text" size="30" name="reg_password" placeholder="Пароль не менее 6 символов"><br><br>
             <input class="button" type="submit" name="signup_admin"  value="Добавить Админа"> <br>
@@ -26,5 +23,5 @@ if (checkAdmin()) {
 
 <?php
 }
-else {header('Location: index.php');}
+else {header('Location: 404.php');}
 require_once "footer.php";

@@ -6,8 +6,7 @@
 <body>
 
 <?php
-require_once "config.php";
-require_once "User.class.php";
+require_once "mainController.php";
 ?>
 
 <div align="center">
@@ -17,5 +16,5 @@ require_once "User.class.php";
 </div>
 
 <?php
-userInfo();
+$user = (new User)->UserInfo();
 require_once "footer.php";

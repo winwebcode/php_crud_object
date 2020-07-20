@@ -8,8 +8,7 @@
 <body>
     
 <?php
-require_once "config.php";
-require_once "User.class.php";
+require_once "mainController.php";
 ?>
 
 <a href='index.php'><img alt="" src="img/bye.png"><br>You Sign Out.</a>

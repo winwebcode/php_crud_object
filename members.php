@@ -8,9 +8,9 @@
 
 
 <?php
-require_once "config.php";
-require_once "User.class.php";
-shortUserInfo();
+require_once "mainController.php";
+$user = new User();
+$user->shortUserInfo();
 ?>
 
 
@@ -18,12 +18,11 @@ shortUserInfo();
 <div align="center">
 <h3>Меню </h3>
 <form class="menu">
-<input class="menu" type="button" onclick="document.location='index.php'" value="На главную"><br>
-
+    <input class="menu" type="button" onclick="document.location='index.php'" value="На главную"><br>
 </form> 
 </div>
 <!--/Menu-->
 
 <?php
-getMembersList();
+$user->getMembersList();
 require_once "footer.php";

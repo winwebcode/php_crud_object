@@ -1,11 +1,3 @@
-<?php
-/*update table*/
-require_once "config.php";
-require_once "User.class.php";
-require_once "Client.class.php";
-shortUserInfo();
-?>
-
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -17,8 +9,11 @@ shortUserInfo();
 <div align="center">
 
 <?php
-/* Обновление данных в БД klient */
-// Редактирование данных о клиенте
+require_once "mainController.php";
+$user = (new User)->shortUserInfo();
+
+/* update table*/
+// modify date
 if (!isset($_GET['id_klient']))	{} 
 else {
     $id = $_GET['id_klient'];  // приходит из getklientlist.php

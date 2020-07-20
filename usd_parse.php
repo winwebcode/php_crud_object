@@ -13,9 +13,8 @@
 /*
 https://regex101.com/ test regexp
 */
-require_once "config.php";
-require_once "User.class.php";;
-shortUserInfo();
+require_once "mainController.php";
+$user = (new User)->shortUserInfo();
 $today = date("d.m.Y");
 //парсим курсы за сегодня с ЦБ
 $money_data = file_get_contents("http://cbr.ru/currency_base/daily/?UniDbQuery.Posted=True&UniDbQuery.To=$today");

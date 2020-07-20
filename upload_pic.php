@@ -1,8 +1,7 @@
 <?php
 /*update table*/
-require_once "config.php";
-require_once "User.class.php";
-shortUserInfo();
+require_once "mainController.php";
+$user = (new User)->shortUserInfo();
 ?>
 
 <!DOCTYPE html>

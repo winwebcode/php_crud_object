@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<?php
-require_once "config.php";
-require_once "User.class.php";
-shortUserInfo();
-?>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -17,6 +5,11 @@ shortUserInfo();
         <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
         <title>Change your password</title>
     </head>
+<?php
+require_once "mainController.php";
+$user = (new User)->shortUserInfo();
+?>
+    
     <body>
     <div align="center">
         <form method="POST">

@@ -1,10 +1,3 @@
-<?php
-require_once "config.php";
-require_once "User.class.php";
-require_once "Client.class.php";
-shortUserInfo();
-?>
-
 <html>
 <head>
 	<title>Поиск клиентов</title>
@@ -12,6 +5,11 @@ shortUserInfo();
         <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
 </head>
 <body>
+<?php
+require_once "mainController.php";
+$user = (new User)->shortUserInfo();
+?>
+    
 <div align="center">
 	<form method="GET" action="search.php">
 		<input required class="button"  type="text" placeholder="Введите Фамилию" name="poisk"> <br><br> 

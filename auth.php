@@ -1,6 +1,5 @@
 <?php
-require_once "config.php";
-require_once "User.class.php";
+require_once "mainController.php";
 ?>
 <html>
 <head>
