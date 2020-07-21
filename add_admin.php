@@ -8,7 +8,7 @@ if ($user->checkAdmin() == true) {
 <head>
 	<title>Добавить клиента</title>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
         <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
 </head>
 

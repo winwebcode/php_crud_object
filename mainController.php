@@ -1,8 +1,31 @@
 <?php
-require_once "config.php";
-require_once 'User.class.php';
-require_once 'Client.class.php';
-require_once 'Article.class.php';
+//read https://habr.com/ru/post/150267/
+
+/*
+spl_autoload_register(function (string $className) {
+    
+    require_once __DIR__ . '/Models/' . $className . '.class.php';
+    var_dump($className);
+});
+*/
+
+$path_class = "Models";
+require_once "$path_class/config.php";
+require_once "$path_class/User.class.php";
+require_once "$path_class/Client.class.php";
+require_once "$path_class/Article.class.php";
+
+
+/*router
+ * надо писать под него правила htaccess, nginx
+ 
+function routeViews(){
+    $url = $_SERVER['REQUEST_URI'];
+    $path = explode('/', $url);
+    require_once "views/$path[2]";
+}
+routeViews();
+*/
 
 /*
  * User Class

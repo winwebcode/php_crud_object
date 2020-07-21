@@ -5,9 +5,9 @@ require_once "mainController.php";
 <head>
 <title>Авторизация</title>
 <meta charset="UTF-8" />
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
 <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
-<script src="js/script.js" type="text/javascript"></script>
+<script src="styles/script.js" type="text/javascript"></script>
 </head>
 
 <body>

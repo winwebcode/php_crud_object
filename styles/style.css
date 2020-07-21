@@ -24,7 +24,7 @@
     color:black;
     width:200px;
     height: 30px;
-    background-image: url('img/home2.jpg');
+    background-image: url('../img/home2.jpg');
     font-family:'Times New Roman', Times, serif;
     font-weight:bold;
     font-size:18px;
@@ -37,7 +37,7 @@
     color:black;
     width:200px;
     height: 30px;
-    background-image: url('img/home3.jpg');
+    background-image: url('../img/home3.jpg');
     font-family:'Times New Roman', Times, serif;
     font-weight:bold;
     font-size:18px;
@@ -49,7 +49,7 @@
     color:black;
     width:450px; 
     height: 40px;
-    background-image: url('img/home2.jpg');
+    background-image: url('../img/home2.jpg');
     font-family:'Times New Roman', Times, serif;
     font-weight:bold;
     font-size:18px;
@@ -62,7 +62,7 @@
     color:black;
     width:450px; 
     height: 40px;
-    background-image: url('img/home3.jpg');
+    background-image: url('../img/home3.jpg');
     font-family:'Times New Roman', Times, serif;
     font-weight:bold;
     font-size:18px;

@@ -1,13 +1,13 @@
 <?php
-require_once "mainController.php";
+//require_once "mainController.php";
 ?>
 <html>
 <head>
 	<title>Регистрация</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
         <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
 </head>
- <script src="js/script.js" type="text/javascript"></script>
+ <script src="styles/script.js" type="text/javascript"></script>
 <div align="center">
     <form method="POST">
 		<input required class="button" type="text" value="Login" size="30" name="reg_login" minlength="4" placeholder="Не менее 4 символов"><br><br>

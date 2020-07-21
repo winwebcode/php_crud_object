@@ -3,6 +3,8 @@
 /*
  In develop
  */
+//namespace php_crud_object\Models\Articles;
+
 class Article
 {
     private $title;
