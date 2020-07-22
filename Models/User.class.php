@@ -62,7 +62,7 @@ Class User
             unset($this->password);
             exit("Возможно, вы ввели не всю информацию, логин = пароль или являются слишком короткие, вернитесь назад и заполните поля корректно!");
         } else {}
-        //return $userdata = ['login'=>"$this->login", 'password'=>"$this->password"];
+        
         return $this;
     }
     
@@ -128,38 +128,23 @@ Class User
     {
         //session_start();
         if (empty($_SESSION['login']) || empty ($_SESSION['user_id']) || empty ($_SESSION['role'])) {
-            header('Location: auth.php');	
+            //header('Location: index.php');
+            require_once 'auth.php';
+            return false;
         }
-        //если уже авторизован - показываем ссылку на выход / имя пользователя и прочее
+        //если уже авторизован
         else {	
             $this->client_ip = $_SERVER['REMOTE_ADDR'];
             $this->user_id = $_SESSION['user_id'];
             $this->current_user = $_SESSION['login'];
             $this->role = $_SESSION['role'];
-        }      
+        }
         return $this;
-    }
-    
-    public function signOut()
-    {
-       // $current_user = $_SESSION['login'];
-       // $client_ip = $_SERVER['REMOTE_ADDR'];
-        
-        $today_date_time = date("D M j H:i:s e Y"); 
-        $last_login_log = "IP: $client_ip, Дата: $today_date_time";
-        //add log auth to DB
-        if (queryMysql("UPDATE user SET log = '$last_login_log' WHERE login = '$current_user'")) {
-        }
-        else {
-            echo "<br>Ошибка логирования<br>";
-        }
-        session_destroy();
-        header('Location: logout.php');
     }
     
     public function shortUserInfo()
     {
-        $this->checkAuth();
+        
         // Sign out text
         $random_otvet = rand(1,5);
         switch ($random_otvet) {
@@ -181,9 +166,32 @@ Class User
             default:
                     print "error";
         }
-        $userpic = $this->getUserPic();
-        echo "$userpic<br><br> Вы вошли как <a title = 'Нажмите для подробной информации' href='user.php'>$this->current_user</a>, ваш IP <a target='blank' href='https://ip.osnova.news/?ip=$this->client_ip'>$this->client_ip</a>";
-        echo "<br><a href='?sign_out'>$random_logout_text</a><br><br>";
+        $this->checkAuth();
+        if ($this->current_user != '') {
+            $userpic = $this->getUserPic();
+            echo "$userpic<br><br> Вы вошли как <a title = 'Нажмите для подробной информации' href='user.php'>$this->current_user</a>, ваш IP <a target='blank' href='https://ip.osnova.news/?ip=$this->client_ip'>$this->client_ip</a>";
+            echo "<br><a href='?sign_out'>$random_logout_text</a><br><br>";
+            return true;
+        } 
+        else {
+            echo "Вы не авторизованы.<br>";
+            return false;
+        }
+    }
+    
+    public function signOut()
+    {
+        $this->checkAuth();        
+        $today_date_time = date("D M j H:i:s e Y"); 
+        $last_login_log = "IP: $client_ip, Дата: $today_date_time";
+        //add log auth to DB
+        if (queryMysql("UPDATE user SET log = '$last_login_log' WHERE login = '$this->current_user'")) {
+        }
+        else {
+            echo "<br>Ошибка логирования<br>";
+        }
+        session_destroy();
+        header('Location: logout.php');
     }
  
     //date counter

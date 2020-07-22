@@ -6,7 +6,10 @@
 <body>
 
 <?php
-require_once "mainController.php";
+require_once "./mainController.php";
+$user = new User();
+if ($user->checkAuth() == true) {
+$user->userInfo();
 ?>
 
 <div align="center">
@@ -16,5 +19,5 @@ require_once "mainController.php";
 </div>
 
 <?php
-$user = (new User)->UserInfo();
+}
 require_once "footer.php";

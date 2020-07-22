@@ -6,11 +6,12 @@
 <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
 <title>Upload favicon</title>
 </head>
-    <body>
 <?php
-require_once "mainController.php";
+require_once "./mainController.php";
 $user = (new User)->shortUserInfo();
 ?>
+    <body>
+
         
         <div align="center">
          <form method='post' action='favicon.php' enctype='multipart/form-data'>

@@ -8,7 +8,7 @@
 
 
 <?php
-require_once "mainController.php";
+require_once "./mainController.php";
 $user = new User();
 $user->shortUserInfo();
 ?>

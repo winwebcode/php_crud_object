@@ -1,17 +1,19 @@
-<?php
-/*update table*/
-require_once "mainController.php";
-$user = (new User)->shortUserInfo();
-?>
+
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
-        <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
-        <title>Upload avatar</title>
-    </head>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
+<title>Upload avatar</title>
+</head>
+<?php
+/*update table*/
+require_once "./mainController.php";
+$user = new User();
+if ($user->shortUserInfo() == true) {
+    ?>
     <body>
         <div align="center">
          <form method='post' action='upload_pic.php' enctype='multipart/form-data'>
@@ -30,6 +32,7 @@ $user = (new User)->shortUserInfo();
             <img src="img/userpics/butthead.png" width="150" heigth="150"><input type="radio" name="my_userpic" value="butthead.png"  border="0" alt="Submit" />
             <br><input type='submit' name='choise_userpic' value="Set"><br>
         </form>
-<?php
+    <?php
+}
 require_once "footer.php";
 

@@ -1,6 +1,4 @@
-<?php
-require_once "mainController.php";
-?>
+
 <html>
 <head>
 <title>Авторизация</title>
@@ -9,7 +7,9 @@ require_once "mainController.php";
 <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
 <script src="styles/script.js" type="text/javascript"></script>
 </head>
-
+<?php
+require_once "./mainController.php";
+?>
 <body>
 	<div class="blocker" align="center">  
 		<br><br>

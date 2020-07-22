@@ -1,5 +1,5 @@
 <?php
-//require_once "mainController.php";
+//require_once "./mainController.php";
 ?>
 <html>
 <head>

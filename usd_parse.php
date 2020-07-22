@@ -13,7 +13,7 @@
 /*
 https://regex101.com/ test regexp
 */
-require_once "mainController.php";
+require_once "./mainController.php";
 $user = (new User)->shortUserInfo();
 $today = date("d.m.Y");
 //парсим курсы за сегодня с ЦБ
