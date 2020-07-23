@@ -19,5 +19,5 @@ $user = (new User)->shortUserInfo();
         <input type="submit" name="update_pass" value="Изменить данные"> 
         </form>
     </div>
-    </body>
-</html>
+<?php
+require_once "footer.php";

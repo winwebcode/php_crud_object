@@ -15,4 +15,3 @@ require_once "./mainController.php";
 
 <?php
 require_once "footer.php";
-?>

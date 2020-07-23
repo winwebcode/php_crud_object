@@ -15,7 +15,7 @@ if ($user->shortUserInfo() == true) {
 
     /* update table*/
     // modify date
-    if (!isset($_GET['id_klient']))	{} 
+    if (!isset($_GET['id_klient'])) {} 
     else {
         $id = $_GET['id_klient'];  // приходит из getklientlist.php
         $s = queryMysql("SELECT * FROM klient WHERE (id_klient = '$id')");

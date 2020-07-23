@@ -8,17 +8,20 @@
 </head>
 <?php
 require_once "./mainController.php";
-$user = (new User)->shortUserInfo();
-?>
-    <body>
+$user = new User();
+$user->shortUserInfo();
+if ($user->checkAdmin() == true) {
+    ?>
+        <body>
 
-        
-        <div align="center">
-         <form method='post' action='favicon.php' enctype='multipart/form-data'>
-          Выберите ICO или PNG файл:<br>
-          <input type='file' name='filename' value='browse' size='10'><br>
-          <input type='submit' name='upload_favicon' value='Upload'><br>
-        </form>
-        </div><br><br>       
-<?php
+
+            <div align="center">
+             <form method='post' action='favicon.php' enctype='multipart/form-data'>
+              Выберите ICO или PNG файл:<br>
+              <input type='file' name='filename' value='browse' size='10'><br>
+              <input type='submit' name='upload_favicon' value='Upload'><br>
+            </form>
+            </div><br><br>       
+    <?php
+}
 require_once "footer.php";
