@@ -182,7 +182,7 @@ Class User
     {
         $this->checkAuth();        
         $today_date_time = date("D M j H:i:s e Y"); 
-        $last_login_log = "IP: $client_ip, Дата: $today_date_time";
+        $last_login_log = "IP: $this->client_ip, Дата: $today_date_time";
         //add log auth to DB
         if (queryMysql("UPDATE user SET log = '$last_login_log' WHERE login = '$this->current_user'")) {
         }
