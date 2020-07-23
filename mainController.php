@@ -4,10 +4,10 @@
 /*
 spl_autoload_register(function (string $className) {
     
-    require_once __DIR__ . '/Models/' . $className . '.class.php';
+    require_once __DIR__ . '/' . $className.  '.class.php';
     var_dump($className);
-});
-*/
+}); */
+
 
 $path_class = "Models";
 require_once "$path_class/config.php";

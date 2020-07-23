@@ -2,7 +2,6 @@
 /*Class User - Autharization, change password, check autharization,
  * ban and unban, list of members, save user,
  *  sign out, info about current user*/
-//namespace php_crud_object\Models\Users;
 
 Class User
 {
