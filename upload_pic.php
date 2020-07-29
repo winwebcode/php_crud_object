@@ -10,7 +10,7 @@
 </head>
 <?php
 /*update table*/
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 if ($user->shortUserInfo() == true) {
     ?>

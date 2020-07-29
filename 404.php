@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="page404">
-            <a href="index.php"><img src="img/404.png"></a>
+            <a href="start.php"><img src="img/404.png"></a>
                 
         </div>
     </body>

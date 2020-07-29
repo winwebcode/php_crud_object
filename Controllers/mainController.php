@@ -1,19 +1,40 @@
 <?php
 //read https://habr.com/ru/post/150267/
-
-/*
-spl_autoload_register(function (string $className) {
-    
-    require_once __DIR__ . '/' . $className.  '.class.php';
-    var_dump($className);
-}); */
-
-
-$path_class = "Models";
+$path_class = "./Models";
 require_once "$path_class/config.php";
 require_once "$path_class/User.class.php";
 require_once "$path_class/Client.class.php";
 require_once "$path_class/Article.class.php";
+
+
+class MainController
+{
+    public function main()
+    {
+        require_once './start.php';
+    }
+    
+    public function routeBlog(string $postname){
+        
+        $resultat = queryMysql("SELECT * FROM posts where postname = '$postname'");
+        $f = $resultat->fetch_array();
+        $article['name'] = $f['title'];
+        $article['text'] = $f['article'];        
+        
+            if ($resultat->num_rows != 0) {
+                
+                require_once './blog.php';
+            }
+            else {
+                $article['name'] = 'Blog';
+                $article['text'] = 'Описание блога находится в процессе реализации. Попробуйте зайти позже.';
+                require_once './blog.php';
+            }   
+    }
+    
+    
+            
+}
 
 
 /*router

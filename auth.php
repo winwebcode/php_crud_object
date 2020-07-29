@@ -8,7 +8,7 @@
 <script src="styles/script.js" type="text/javascript"></script>
 </head>
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 ?>
 <body>
 	<div class="blocker" align="center">  
@@ -20,6 +20,7 @@ require_once "./mainController.php";
                     <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> </span>
                     <input class="auth" type="submit" name="autharization" value="Войти"><br>
                     <a  href="reg.php">Регистрация</a><br>
+                    <a  href="blog/">Читать блог</a><br>
 		</form>
 	</div>
 <?php

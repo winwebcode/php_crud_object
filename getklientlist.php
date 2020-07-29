@@ -6,7 +6,7 @@
 <body>
 
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 if ($user->shortUserInfo() == true) {
     ?>
@@ -19,7 +19,7 @@ if ($user->shortUserInfo() == true) {
             <input class="button" type="text" value="Введите ID" name="nomerID" onfocus="value=''"><br><br>
             <input class="button" type="submit"  value="Удалить клиента" > <br>
             <input class="button" type="reset"  value="Очистить поля" ><br>
-            <input class="button" type="button" value="На главную" onclick= "document.location='index.php'"><br><br>
+            <input class="button" type="button" value="На главную" onclick= "document.location='start.php'"><br><br>
      </form>
     </div>
 

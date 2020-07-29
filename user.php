@@ -5,7 +5,7 @@
 <body>
 
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 if ($user->checkAuth() == true) {
 $user->userInfo();
@@ -13,7 +13,7 @@ $user->userInfo();
 
 <div align="center">
  <form>
-    <input class="button" type="button" value="На главную" onclick= "document.location='index.php'"><br><br>
+    <input class="button" type="button" value="На главную" onclick= "document.location='start.php'"><br><br>
  </form>
 </div>
 

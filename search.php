@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 if ($user->shortUserInfo() == true) {
     ?>
@@ -15,7 +15,7 @@ if ($user->shortUserInfo() == true) {
             <form method="GET" action="search.php">
                     <input required class="button"  type="text" placeholder="Введите Фамилию" name="poisk"> <br><br> 
                     <input class="button" type="submit"  value="Поиск" > <br>
-                    <input class="button" type="button" value="На главную" onclick= "document.location='index.php'"><br>	
+                    <input class="button" type="button" value="На главную" onclick= "document.location='start.php'"><br>	
             </form>
     </div>
 

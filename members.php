@@ -8,7 +8,7 @@
 
 
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 $user->shortUserInfo();
 ?>
@@ -18,7 +18,7 @@ $user->shortUserInfo();
 <div align="center">
 <h3>Меню </h3>
 <form class="menu">
-    <input class="menu" type="button" onclick="document.location='index.php'" value="На главную"><br>
+    <input class="menu" type="button" onclick="document.location='start.php'" value="На главную"><br>
 </form> 
 </div>
 <!--/Menu-->

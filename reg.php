@@ -1,5 +1,5 @@
 <?php
-//require_once "./mainController.php";
+//require_once "./Controllers/mainController.php";
 ?>
 <html>
 <head>
@@ -14,7 +14,7 @@
                 <span class="password"><input required class="button" type="password" value="Password" id="password-input" size="30" name="reg_password" placeholder="Не менее 6 символов" minlength="6" onfocus="value=''"><br><br>
                 <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> </span>
 		<input class="button" type="submit" name="signup"  value="Регистрация"> <br>
-		<input class="button" type="button" value="На главную" onclick="document.location='index.php'"><br>
+		<input class="button" type="button" value="На главную" onclick="document.location='start.php'"><br>
 	</form>
 </div>
 

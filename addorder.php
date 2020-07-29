@@ -7,7 +7,7 @@
 </head>
 
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 if ($user->shortUserInfo() == true) {
     ?>
@@ -24,7 +24,7 @@ if ($user->shortUserInfo() == true) {
                     <input class="button" type="text" value="" size="30" name="deposit" placeholder="Депозит. Данное поле пока не передаёт данные" placeholder="" ><br><br>
                     <input class="button" type="submit" name="add_client"  value="Добавить клиента" > <br>
                     <input class="button" type="reset"  value="Очистить поля" > <br>
-                    <input class="button" type="button" value="На главную" onclick= "document.location='index.php'"><br>
+                    <input class="button" type="button" value="На главную" onclick= "document.location='start.php'"><br>
             </form>
     </div>
 

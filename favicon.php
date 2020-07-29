@@ -7,7 +7,7 @@
 <title>Upload favicon</title>
 </head>
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 $user->shortUserInfo();
 if ($user->checkAdmin() == true) {

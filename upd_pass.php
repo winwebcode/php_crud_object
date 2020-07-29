@@ -6,7 +6,7 @@
         <title>Change your password</title>
     </head>
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = (new User)->shortUserInfo();
 ?>
     

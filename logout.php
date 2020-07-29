@@ -8,10 +8,10 @@
 <body>
     
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 ?>
 
-<a href='index.php'><img alt="" src="img/bye.png"><br>You Sign Out.</a>
+<a href='start.php'><img alt="" src="img/bye.png"><br>You Sign Out.</a>
 
 <?php
 require_once "footer.php";

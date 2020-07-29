@@ -114,7 +114,7 @@ Class User
                 $_SESSION['login'] = $myrow['login']; 
                 $_SESSION['user_id'] = $myrow['user_id'];		
                 $_SESSION['role'] = $myrow['role'];
-                header('Location: index.php');
+                header('Location: start.php');
             }
             else {
                 echo "<br>Извините, введённый вами логин или пароль неверный_2 или вы забанены.<br>";
@@ -127,7 +127,7 @@ Class User
     {
         //session_start();
         if (empty($_SESSION['login']) || empty ($_SESSION['user_id']) || empty ($_SESSION['role'])) {
-            //header('Location: index.php');
+            //header('Location: start.php');
             require_once 'auth.php';
             return false;
         }

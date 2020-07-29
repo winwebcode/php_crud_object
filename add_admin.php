@@ -1,5 +1,5 @@
 <?php
-require_once "./mainController.php";
+require_once "./Controllers/mainController.php";
 $user = new User();
 $user->shortUserInfo();
 if ($user->checkAdmin() == true) {
@@ -17,7 +17,7 @@ if ($user->checkAdmin() == true) {
             <input required class="button" minlength="4" type="text" size="30" name="reg_login" placeholder="Логин не менее 4 символов"><br><br>
             <input required class="button" minlength="6" type="text" size="30" name="reg_password" placeholder="Пароль не менее 6 символов"><br><br>
             <input class="button" type="submit" name="signup_admin"  value="Добавить Админа"> <br>
-            <input class="button" type="button" value="На главную" onclick="document.location='index.php'"><br>
+            <input class="button" type="button" value="На главную" onclick="document.location='start.php'"><br>
 	</form>
 </div>
 
