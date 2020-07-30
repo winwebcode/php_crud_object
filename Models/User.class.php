@@ -128,10 +128,11 @@ Class User
         //session_start();
         if (empty($_SESSION['login']) || empty ($_SESSION['user_id']) || empty ($_SESSION['role'])) {
             //header('Location: start.php');
-            if ($_SERVER['REQUEST_URI'] != 'reg.php'){
+            if ($_SERVER['REQUEST_URI'] != 'reg.php') {
                 require_once 'auth.php';
-                return false;   
+                return false;
             }
+            
         }
         //если уже авторизован
         else {	

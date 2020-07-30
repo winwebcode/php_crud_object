@@ -57,7 +57,6 @@ if (isset($_POST['autharization'])) {
 
 if (isset($_GET['sign_out'])) {
     $new_user = (new User)
-    ->checkAuth()
     ->signOut();
 }
 
