@@ -1,9 +1,8 @@
 <?php
 
 require_once 'Controllers/mainController.php';
+/*router */
 $route = $_GET['route'] ?? '';
-
-//var_dump($route);
 $pattern = '~^blog/(.*)$~';
 preg_match($pattern, $route, $matches);
 

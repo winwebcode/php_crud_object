@@ -23,12 +23,12 @@ class MainController
         
             if ($resultat->num_rows != 0) {
                 
-                require_once './single_post.php';
+                require_once './templates/single_post.php';
             }
             else {
                 $article['name'] = 'Blog';
                 $article['text'] = 'Описание блога находится в процессе реализации. Попробуйте зайти позже.';
-                require_once './blog.php';
+                require_once './templates/blog.php';
             }   
     }
     
@@ -36,17 +36,6 @@ class MainController
             
 }
 
-
-/*router
- * надо писать под него правила htaccess, nginx
- 
-function routeViews(){
-    $url = $_SERVER['REQUEST_URI'];
-    $path = explode('/', $url);
-    require_once "views/$path[2]";
-}
-routeViews();
-*/
 
 /*
  * User Class

@@ -35,16 +35,14 @@ class Article
     }
     
     public function getsidebarPosts() {
-          // Output links of posts
+        // Output links of posts
         $resultat = queryMysql("SELECT * FROM posts ORDER BY id_posts");
         if ($resultat->num_rows != 0) {	
             // Выводим таблицу:  , получаем число рядов в выборке
             for ($c=0; $c<10; $c++) {
-                    echo "<tr>";
-                    $f = $resultat->fetch_array(); 
-                    echo "<a href='$f[postname]'>$f[postname]</a><br>";
+                $f = $resultat->fetch_array(); 
+                echo "<a href='$f[postname]'>$f[postname]</a><br>";
             }
-
         }
         else {
             echo "<div align='center'>Посты не найдены</div>";
