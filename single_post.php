@@ -1,3 +1,4 @@
+<?php require_once 'Controllers/mainController.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 	<meta name="description" content="<?php echo $article['description'];?>" />
 	<link href="/php_crud_object/styles/blog_style.css" rel="stylesheet">
 </head>
-<?php require_once 'Controllers/mainController.php'; ?>
+
 <body>
 
 <div class="wrapper">
@@ -23,7 +24,7 @@
 			<main class="content">
                                                        
                             <p><?php echo $article['text'] ?></p><br><br><br>
-                            <strong>Превью записей из базы:</strong>
+                            
 			</main><!-- .content -->
 		</div><!-- .container-->
 

@@ -2,10 +2,10 @@
 -- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 22, 2020 at 08:01 AM
--- Server version: 5.7.22
--- PHP Version: 7.1.19
+-- Хост: localhost
+-- Время создания: Июл 30 2020 г., 08:08
+-- Версия сервера: 5.7.22
+-- Версия PHP: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cdrom`
+-- База данных: `cdrom`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `klient`
+-- Структура таблицы `klient`
 --
 
 CREATE TABLE `klient` (
@@ -38,7 +38,7 @@ CREATE TABLE `klient` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `klient`
+-- Дамп данных таблицы `klient`
 --
 
 INSERT INTO `klient` (`family`, `name`, `patronymic`, `phone`, `birth_date`, `id_klient`) VALUES
@@ -50,7 +50,30 @@ INSERT INTO `klient` (`family`, `name`, `patronymic`, `phone`, `birth_date`, `id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Структура таблицы `posts`
+--
+
+CREATE TABLE `posts` (
+  `title` varchar(200) NOT NULL,
+  `article` text NOT NULL,
+  `postname` varchar(100) NOT NULL,
+  `id_posts` int(11) NOT NULL,
+  `keywords` text,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `posts`
+--
+
+INSERT INTO `posts` (`title`, `article`, `postname`, `id_posts`, `keywords`, `description`) VALUES
+('Тестовая запись', 'Проверка вывода', 'Тестовая запись', 1, NULL, ''),
+('qwerty', 'Test blog', 'qwerty', 4, NULL, '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `settings`
 --
 
 CREATE TABLE `settings` (
@@ -60,7 +83,7 @@ CREATE TABLE `settings` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Структура таблицы `user`
 --
 
 CREATE TABLE `user` (
@@ -75,11 +98,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Дамп данных таблицы `user`
 --
 
 INSERT INTO `user` (`login`, `password`, `user_id`, `log`, `role`, `ban`, `userpic`, `reg_date`) VALUES
-('administrator', '$2y$10$S8a/WHQhtKD8z7efegfDkO5fnBi6emHjnrQl3kj2w0EVhTsYelvA2', 49, 'IP: 127.0.0.1, Дата: Mon Jul 20 08:06:02 UTC 2020', 'admin', '', 'img/userpics/bye.png', '01-07-2020'),
+('administrator', '$2y$10$S8a/WHQhtKD8z7efegfDkO5fnBi6emHjnrQl3kj2w0EVhTsYelvA2', 49, 'IP: 127.0.0.1, Дата: Thu Jul 23 14:54:50 UTC 2020', 'admin', '', 'img/userpics/beavis.png', '01-07-2020'),
 ('newadmin', '$2y$10$BVKOyOYch2WeI3/c.t09hOyPeB/Dc4WFBnOsp1ZaUYvrteSYBIVOG', 51, 'IP: 127.0.0.1, Дата: Wed Jun 17 06:27:06 UTC 2020', 'user', '', NULL, ''),
 ('wewewe', '$2y$10$mTxg1hqFxyy7BbQyRF.LR.QPx21av1/4AwiW61X/RUdJGxLeOp5/m', 55, 'IP: 127.0.0.1, Дата: Thu Jun 18 10:49:59 UTC 2020', 'admin', '', NULL, ''),
 ('user1', '$2y$10$EHDH7hY100XjdRPfgNCzpuOAeUy4glenimQ2Jz5xfQcuWv5MkQlQq', 56, 'IP: 127.0.0.1, Дата: Sat Jun 20 08:58:59 UTC 2020', 'user', '', NULL, ''),
@@ -93,33 +116,45 @@ INSERT INTO `user` (`login`, `password`, `user_id`, `log`, `role`, `ban`, `userp
 ('supadmin', '$2y$10$S196aLFsqqrMCR.499sZIO1zjQwM.3gfrT7p//E1i3DT1fCaIPdlq', 64, NULL, 'admin', NULL, NULL, '-2007');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `klient`
+-- Индексы таблицы `klient`
 --
 ALTER TABLE `klient`
   ADD PRIMARY KEY (`id_klient`);
 
 --
--- Indexes for table `user`
+-- Индексы таблицы `posts`
+--
+ALTER TABLE `posts`
+  ADD UNIQUE KEY `idpost` (`id_posts`);
+
+--
+-- Индексы таблицы `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `klient`
+-- AUTO_INCREMENT для таблицы `klient`
 --
 ALTER TABLE `klient`
   MODIFY `id_klient` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT для таблицы `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id_posts` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;

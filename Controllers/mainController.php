@@ -23,7 +23,7 @@ class MainController
         
             if ($resultat->num_rows != 0) {
                 
-                require_once './blog.php';
+                require_once './single_post.php';
             }
             else {
                 $article['name'] = 'Blog';
