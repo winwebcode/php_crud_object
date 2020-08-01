@@ -1,8 +1,38 @@
 <?php
-
 //ini_set('error_reporting', 0);
 //ini_set('display_errors', 0);
 session_start();
+
+Class DB
+{
+    /** @var \PDO */
+    private $pdo;
+
+    public function __construct()
+    {
+        $dbOptions = (require __DIR__ . 'settings.php')['db'];
+
+        //$this->pdo = new \PDO(
+        $this->pdo = new PDO(
+            'mysql:host=' . $dbOptions['host'] . ';dbname=' . $dbOptions['dbname'],
+            $dbOptions['user'],
+            $dbOptions['password']
+        );
+        $this->pdo->exec('SET NAMES UTF8');
+    }
+
+    public function query(string $sql, $params = []): ?array
+    {
+        $sth = $this->pdo->prepare($sql);
+        $result = $sth->execute($params);
+
+        if (false === $result) {
+            return null;
+        }
+
+        return $sth->fetchAll();
+    }
+}
 
 //SQL query
 

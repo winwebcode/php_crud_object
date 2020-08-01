@@ -1,8 +1,6 @@
 <?php
 /* Work with clients */
 
-//namespace php_crud_object\Models\Clients;
-
 Class Client
 {   
     /* Get list of clients company */

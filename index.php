@@ -1,5 +1,4 @@
 <?php
-
 require_once 'Controllers/mainController.php';
 /*router */
 $route = $_GET['route'] ?? '';

@@ -1,7 +1,13 @@
 <?php
+/*
+spl_autoload_register(function (string $className) {
+    require_once __DIR__ . '/../Models/' . $className . '.class.php';
+}); */
+
 //read https://habr.com/ru/post/150267/
+
 $path_class = "./Models";
-require_once "$path_class/config.php";
+require_once "$path_class/DB.class.php";
 require_once "$path_class/User.class.php";
 require_once "$path_class/Client.class.php";
 require_once "$path_class/Article.class.php";

@@ -3,6 +3,7 @@
  * ban and unban, list of members, save user,
  *  sign out, info about current user*/
 
+
 Class User
 {
     //свойства
@@ -87,7 +88,10 @@ Class User
         else {
             // если такого нет, то сохраняем данные и проверяем, есть ли ошибки
             if (queryMysql("INSERT INTO user (login, password, role, reg_date) VALUES('$this->login' , '$hash_auth_password','$this->role', $reg_date)")) {
-                    echo "<br>Пользователь добавлен.<br>";
+                echo "<br>Пользователь добавлен.<br>";
+                sleep(3);
+                header('Location: auth.php');
+
             }
             else {
                     echo "<br>Ошибка! Вы не зарегистрированы.<br>";
@@ -128,10 +132,11 @@ Class User
         //session_start();
         if (empty($_SESSION['login']) || empty ($_SESSION['user_id']) || empty ($_SESSION['role'])) {
             //header('Location: start.php');
-            if ($_SERVER['REQUEST_URI'] != 'reg.php') {
-                require_once 'auth.php';
-                return false;
-            }
+            require_once 'auth.php';
+            return false;
+            /*if ($_SERVER['REQUEST_URI'] != 'reg.php') {
+
+            }*/
             
         }
         //если уже авторизован
