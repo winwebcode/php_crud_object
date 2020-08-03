@@ -21,7 +21,7 @@ if ($user->shortUserInfo() == true) {
                     <input required class="button" type="text" value="" size="30" name="patronymic" placeholder="Отчество" ><br><br>
                     <input required class="button" type="text" value="" size="30" name="birth_date" placeholder="Дата рождения" ><br><br>
                     <input required class="button" type="text" value="" size="30" minlength="11" maxlength="11" name="phone" placeholder="Телефон в формате 89109355050" ><br><br>
-                    <input class="button" type="text" value="" size="30" name="deposit" placeholder="Депозит. Данное поле пока не передаёт данные" placeholder="" ><br><br>
+                    <input class="button" type="text" value="" size="30" name="deposit" placeholder="Депозит. Тест. поле не передаёт данные" placeholder="" ><br><br>
                     <input class="button" type="submit" name="add_client"  value="Добавить клиента" > <br>
                     <input class="button" type="reset"  value="Очистить поля" > <br>
                     <input class="button" type="button" value="На главную" onclick= "document.location='start.php'"><br>

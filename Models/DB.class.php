@@ -10,14 +10,17 @@ Class DB
 
     public function __construct()
     {
-        $dbOptions = (require __DIR__ . 'settings.php')['db'];
+        //$dbOptions = (require 'settings.php')['db'];
+        /*$dbOptions = new PDO(
+            'mysql:host=localhost;dbname=cdrom',
+            'root',
+            'vertrigo'
+        );*/
+        $user = 'root';
+        $pass = 'vertrigo';
 
         //$this->pdo = new \PDO(
-        $this->pdo = new PDO(
-            'mysql:host=' . $dbOptions['host'] . ';dbname=' . $dbOptions['dbname'],
-            $dbOptions['user'],
-            $dbOptions['password']
-        );
+        $this->pdo = new PDO('mysql:host=localhost;dbname=cdrom', $user, $pass);
         $this->pdo->exec('SET NAMES UTF8');
     }
 
@@ -32,6 +35,8 @@ Class DB
 
         return $sth->fetchAll();
     }
+
+
 }
 
 //SQL query

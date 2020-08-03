@@ -1,11 +1,41 @@
 <?php
+require_once 'DB.class.php';
 /* Work with clients */
 
 Class Client
 {   
     /* Get list of clients company */
+    //PDO mysql
+    public function newGetClientList()
+    {
+        $clientList = (new DB)->query("SELECT * FROM klient ORDER by id_klient");
+
+        if ($clientList>0) {
+                // Выводим заголовок таблицы:
+            echo "<div align='center'>";
+            echo "<table border='1' width='40%' bgcolor='yellow'>";
+            echo "<tr><td><b>ID</b></td><td><b>Фамилия</b></td><td><b>Имя</b></td><td><b>Отчество</b></td><td><b>Дата рождения</b></td><td><b>Телефон</b></td><td><b>Редактирование</b></td>";
+            echo "</tr>";
+
+            // Выводим таблицу:  , получаем число рядов в выборке
+            foreach ($clientList as $clientData){
+                echo "<tr>";
+                echo "<td>$clientData[id_klient]</td> <td>$clientData[family]</td> <td>$clientData[name]</td> <td>$clientData[patronymic]</td> <td>$clientData[birth_date]</td> <td>$clientData[phone]</td><td><a href='update.php?id_klient=$clientData[id_klient]'>Редактировать</a></td>";
+                echo "</tr>";
+            }
+            echo "</table><br><br>";
+        }
+        else {
+            echo "<div align='center'>Клиенты не найдены</div>";
+        }
+
+    }
+
+    //mysqli
     public function getClientsList()
     {
+
+
         $resultat = queryMysql("SELECT * FROM klient ORDER by id_klient"); // запрос с сортировкой по id_klient
         if ($resultat->num_rows != 0) {	
             // Выводим заголовок таблицы:

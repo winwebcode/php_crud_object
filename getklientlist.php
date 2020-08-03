@@ -25,6 +25,8 @@ if ($user->shortUserInfo() == true) {
 
 
     <?php
-    $client = (new Client)->getClientsList();
+
+$client = (new Client)->newGetClientList(); //PDO
+
 }
 require_once "footer.php";
